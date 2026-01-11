@@ -7,10 +7,9 @@ An enhanced frontend design skill that produces production-grade UI code with hi
 - **10 aesthetic archetypes** — Editorial, Swiss, Brutalist, Minimalist, Maximalist, Retro-Futuristic, Organic, Industrial, Art Deco, Lo-Fi
 - **Structured design process** — Context → Archetype → Differentiator → Token System → Implementation
 - **Design token system** — CSS custom properties for colors, spacing, typography, shadows
-- **Accessibility built-in** — Semantic HTML, ARIA, keyboard navigation, focus states, WCAG contrast
-- **Performance standards** — Critical CSS, font optimization, efficient selectors, lazy loading
-- **Motion with purpose** — Custom easing, orchestrated sequences, `prefers-reduced-motion` support
-- **Quality checklist** — 10-point verification before delivery
+- **Motion with purpose** — Custom easing, orchestrated sequences, scroll-triggered animations
+- **Anti-pattern guidance** — Explicit list of generic markers to avoid
+- **Quality checklist** — 5-point verification before delivery
 
 ## Installation
 
@@ -55,9 +54,8 @@ This skill provides the structure that makes creativity reliable.
 | **Process** | "Commit to bold direction" | 5-step structured sequence |
 | **Aesthetics** | "Pick an extreme" | 10 codified archetypes |
 | **Design System** | "Use CSS variables" | Required token structure |
-| **Accessibility** | Not mentioned | Non-negotiable standards |
-| **Performance** | Not mentioned | Dedicated requirements |
-| **Verification** | None | 10-point checklist |
+| **Anti-Patterns** | Brief warning | Explicit markers to avoid |
+| **Verification** | None | 5-point checklist |
 
 ## The 10 Aesthetic Archetypes
 
@@ -79,11 +77,9 @@ This skill provides the structure that makes creativity reliable.
 Every implementation delivers:
 
 1. **Stated direction** — Named archetype + differentiator before code
-2. **Working code** — Complete, runnable, no TODOs or placeholders
+2. **Working code** — Functional code that demonstrates the aesthetic direction
 3. **Design tokens** — CSS custom properties for colors, spacing, typography, shadows
 4. **Responsiveness** — Fluid layout with `clamp()`, breakpoints, or container queries
-5. **Accessibility** — Semantic HTML, keyboard operability, visible focus states
-6. **Reduced motion** — Explicit `prefers-reduced-motion` fallback
 
 ## Example
 
@@ -97,7 +93,7 @@ Every implementation delivers:
 Archetype: Brutalist / Raw
 Differentiator: Phosphor-green monospace type with CRT text glow
 
-[Complete implementation with tokens, accessibility, and reduced motion...]
+[Functional implementation with tokens and responsive layout...]
 ```
 
 ## License
