@@ -17,13 +17,13 @@ An enhanced frontend design skill that produces production-grade UI code with hi
 ### Claude Code
 
 ```bash
-mkdir -p ~/.claude/skills/frontend-design && curl -o ~/.claude/skills/frontend-design/skill.md https://raw.githubusercontent.com/Ilm-Alan/frontend-design/main/skill.md
+mkdir -p ~/.claude/skills/frontend-design && curl -o ~/.claude/skills/frontend-design/SKILL.md https://raw.githubusercontent.com/Ilm-Alan/frontend-design/main/SKILL.md
 ```
 
 ### Codex
 
 ```bash
-mkdir -p ~/.codex/skills/frontend-design && curl -o ~/.codex/skills/frontend-design/skill.md https://raw.githubusercontent.com/Ilm-Alan/frontend-design/main/skill.md
+mkdir -p ~/.codex/skills/frontend-design && curl -o ~/.codex/skills/frontend-design/SKILL.md https://raw.githubusercontent.com/Ilm-Alan/frontend-design/main/SKILL.md
 ```
 
 ## Usage
