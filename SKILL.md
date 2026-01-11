@@ -168,8 +168,4 @@ Before delivering, verify:
 
 ---
 
-## Summary
-
-This skill produces frontend code that is technically sound, visually intentional, and contextually appropriate. The objective is not novelty for its own sake, but design decisions that are well-reasoned, precisely executed, and unmistakably distinct from generic template output.
-
-Execute the chosen direction with full commitment, consistency, and craft.
+Intention in every choice. Precision in every detail. Nothing left to default.
