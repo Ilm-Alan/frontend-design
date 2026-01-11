@@ -1,13 +1,13 @@
 ---
 name: frontend-design
-description: Production-grade, bespoke frontend engineering with high design fidelity. Invoke for web components, pages, dashboards, applications, or any UI requiring polished visual execution. Outputs functional code with intentional aesthetic direction, accessibility, responsiveness, and performance-aware implementation.
+description: Bespoke frontend engineering focused purely on aesthetic excellence. Invoke for web components, pages, dashboards, applications, or any UI requiring distinctive visual execution. Outputs functional code with intentional aesthetic direction and creative craft.
 ---
 
 # Frontend Design Skill
 
 ## Core Thesis
 
-Great frontend design is disciplined translation: a clear, context-specific aesthetic intent (archetype + one differentiator) translated into a coherent system of typography, color tokens, layout, motion, and texture—implemented with accessibility, responsiveness, and performance as non-negotiables.
+Great frontend design is disciplined translation: a clear, context-specific aesthetic intent (archetype + one differentiator) translated into a coherent system of typography, color tokens, layout, motion, and texture.
 
 ---
 
@@ -15,7 +15,7 @@ Great frontend design is disciplined translation: a clear, context-specific aest
 
 Before writing code, complete this sequence:
 
-1. **Context**: Identify purpose, users, domain, content density, and risk factors (accessibility/performance requirements). Output a clear problem statement.
+1. **Context**: Identify purpose, users, domain, and content density. Output a clear problem statement.
 2. **Aesthetic Direction**: Select one archetype from Section 2 and state it explicitly.
 3. **Differentiator**: Define one memorable anchor—a signature interaction, typographic move, layout motif, texture, or material treatment.
 4. **System**: Define tokens and rules: type scale, spacing rhythm, palette mapping, elevation levels.
@@ -50,25 +50,19 @@ Choose context-appropriate typefaces that reinforce the archetype—avoid defaul
 
 Use `clamp()` for fluid responsive scaling (e.g., `font-size: clamp(1rem, 2.5vw, 1.5rem)`). Tune `line-height` carefully: 1.4–1.6 for body text, 1.1–1.2 for display type. Adjust `letter-spacing` and `font-feature-settings` for refinement.
 
-For loading, use `font-display: swap` and subset fonts to reduce payload.
-
 ### 3.2 Color System
 
 Structure your palette with CSS custom properties: `--color-surface`, `--color-text`, `--color-muted`, `--color-primary`, `--color-accent`, `--color-border`. Add semantic tokens for feedback states: `--color-success`, `--color-warning`, `--color-error`.
 
-Meet WCAG AA contrast minimums: 4.5:1 for normal text, 3:1 for large text and UI elements. Distribute color intentionally—dominant (60%) + supporting (30%) + accent (10%). Avoid timid, evenly-split palettes.
+Distribute color intentionally—dominant (60%) + supporting (30%) + accent (10%). Avoid timid, evenly-split palettes.
 
 Implement theme support via `prefers-color-scheme` media query or explicit class toggle.
 
 ### 3.3 Motion & Interaction
 
-Motion must communicate state, hierarchy, or affordance—never decoration alone. Use custom `cubic-bezier()` timing functions; avoid `linear` for UI transitions.
+Motion must communicate state, hierarchy, or affordance—never decoration alone. Use custom `cubic-bezier()` timing functions; avoid `linear` for UI transitions. Orchestrate page-load sequences with staggered `animation-delay` offsets (50–100ms increments).
 
-Orchestrate page-load sequences with staggered `animation-delay` offsets (50–100ms increments). For hardware acceleration, animate only `transform` and `opacity`—avoid animating `top`, `left`, `width`, or `height`.
-
-Use `IntersectionObserver` for scroll-triggered animations; avoid scroll-jacking. Always honor `prefers-reduced-motion: reduce` with functional alternatives.
-
-Prefer CSS for HTML/vanilla JS projects. Use Motion (Framer Motion) for React/Vue when available.
+Use `IntersectionObserver` for scroll-triggered animations. Prefer CSS for HTML/vanilla JS projects. Use Motion (Framer Motion) for React/Vue when available.
 
 ### 3.4 Spatial Composition
 
@@ -98,73 +92,38 @@ Explicitly avoid these markers of generic output:
 
 **Typography**: Never use system font stacks, Inter/Roboto/Arial, or uniform sizing. Instead, choose distinctive, context-appropriate typefaces with clear hierarchy.
 
-**Color**: Avoid purple-on-white gradients, evenly distributed palettes, and low contrast. Instead, commit to palettes with dominant/accent distribution and AA+ contrast.
+**Color**: Avoid purple-on-white gradients, evenly distributed palettes, and low contrast. Instead, commit to palettes with dominant/accent distribution.
 
 **Layout**: Reject centered card grids and predictable hero→cards→testimonials→footer structures. Instead, use asymmetric compositions, unexpected grid breaks, and purposeful whitespace.
 
 **Motion**: Eliminate gratuitous animations, linear easing, and motion without purpose. Instead, use purposeful transitions, custom easing, and orchestrated sequences.
 
-**Details**: Remove stock illustrations, generic icons, and placeholder-style imagery. Instead, create bespoke graphics, custom iconography, and contextual imagery.
+**Details**: Replace stock illustrations and generic icons with bespoke graphics, custom iconography, and contextual imagery.
 
-**Structure**: Never leave template scaffolding visible in final output. Deliver complete, polished implementations with no TODOs or placeholders.
-
----
-
-## 5. Engineering Standards
-
-### Accessibility (Non-negotiable)
-
-Use semantic HTML elements appropriately: `<nav>`, `<main>`, `<article>`, `<section>`, `<button>`, `<form>`. Apply ARIA attributes only when native semantics are insufficient.
-
-Ensure all interactive elements are reachable and operable via keyboard. Provide visible focus states that match the design system—never use `outline: none` without a replacement.
-
-Write descriptive alt text for meaningful images; use empty alt for decorative images. Never convey information by color alone.
-
-### Performance
-
-Minimize render-blocking resources and inline critical CSS when appropriate. Subset fonts, use `font-display: swap`, and limit weights/variants.
-
-Write efficient CSS selectors with maximum 3 levels of nesting. Keep animated surfaces small and minimize heavy blurs and large fixed layers.
-
-Lazy-load off-screen images and heavy assets using appropriate image formats. Avoid unnecessary dependencies and tree-shake when using frameworks.
-
-### Responsiveness
-
-Build mobile-first CSS architecture. Use fluid units (`rem`, `em`, `vw`, `vh`, `%`, `clamp()`) over fixed pixels.
-
-Set breakpoints based on content needs, not device categories. Ensure minimum 44x44px touch targets for interactive elements.
-
-Include proper meta viewport tag and prevent horizontal scroll on mobile.
+**Structure**: Make every visible element intentional. Transform any generic scaffolding into something that reinforces the aesthetic direction.
 
 ---
 
-## 6. Output Contract
+## 5. Output Contract
 
 Every implementation must deliver:
 
 - **Stated Direction**: Explicitly name the archetype and differentiator in 1–2 lines before code.
-- **Working Code**: Complete, runnable snippet(s) appropriate to the chosen stack—no partial implementations.
+- **Working Code**: Functional code that demonstrates the aesthetic direction.
 - **Design Tokens**: CSS custom properties for colors, spacing, typography, and shadows.
 - **Responsiveness**: Demonstrated via fluid layout, breakpoints, or container queries.
-- **Accessibility**: Semantic structure, keyboard operability, and visible focus states.
-- **Reduced Motion**: Explicit `prefers-reduced-motion` handling.
 
 ---
 
-## 7. Finish Checklist
+## 6. Finish Checklist
 
 Before delivering, verify:
 
 - **Archetype Fidelity**: Does every visual choice reinforce the stated archetype?
 - **Differentiator**: Is the memorable anchor implemented, not just described?
 - **Token Coherence**: Are typography, spacing, and color tokens consistent throughout?
-- **Keyboard Access**: Can every interactive element be reached and used via keyboard?
-- **Focus Visibility**: Are focus states visible and styled intentionally?
 - **Responsive Behavior**: Does it remain intentional on mobile, tablet, and wide desktop?
-- **Reduced Motion**: Is there a `prefers-reduced-motion` fallback?
-- **Template Smell**: Is there any generic scaffolding remaining? Remove or transform it.
-- **Placeholder Content**: Are there any TODOs, lorem ipsum, or placeholder comments? Remove them.
-- **Contrast Compliance**: Do text and interactive elements meet WCAG AA contrast ratios?
+- **Template Smell**: Is there any generic scaffolding remaining? Transform it.
 
 ---
 
