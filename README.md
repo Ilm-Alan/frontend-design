@@ -1,6 +1,6 @@
 # Frontend Design Skill for Claude Code and Codex
 
-An enhanced frontend design skill that produces production-grade UI code with high design fidelity. Works with both [Claude Code](https://docs.anthropic.com/en/docs/claude-code) (Anthropic) and [Codex](https://github.com/openai/codex) (OpenAI). Replaces generic Bootstrap-looking output with intentional aesthetic direction, systematic design tokens, and polished visual execution.
+An enhanced frontend design skill that produces production-grade UI code with high design fidelity. Works with both [Claude Code](https://github.com/anthropics/claude-code) (Anthropic) and [Codex](https://github.com/openai/codex) (OpenAI). Replaces generic Bootstrap-looking output with intentional aesthetic direction, systematic design tokens, and polished visual execution.
 
 ## Features
 
