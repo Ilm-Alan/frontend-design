@@ -100,10 +100,6 @@ Differentiator: Phosphor-green monospace type with CRT text glow
 [Complete implementation with tokens, accessibility, and reduced motion...]
 ```
 
-## Keywords
-
-`claude-code` `codex` `frontend-design` `ui-design` `skill` `css` `accessibility` `design-system` `design-tokens` `web-development`
-
 ## License
 
 MIT. See [LICENSE.txt](LICENSE.txt).
