@@ -27,11 +27,23 @@ mkdir -p ~/.codex/skills/frontend-design && curl -o ~/.codex/skills/frontend-des
 
 ### Gemini CLI
 
+First, enable the experimental skills feature in `~/.gemini/settings.json`:
+
+```json
+{
+  "experimental": {
+    "skills": true
+  }
+}
+```
+
+Then install the skill:
+
 ```bash
 mkdir -p ~/.gemini/skills/frontend-design && curl -o ~/.gemini/skills/frontend-design/SKILL.md https://raw.githubusercontent.com/Ilm-Alan/frontend-design/main/SKILL.md
 ```
 
-After installation, run `/skills reload` in Gemini CLI or restart the session to load the skill.
+Run `/skills list` to verify the skill was loaded.
 
 ## Usage
 
