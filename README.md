@@ -1,6 +1,6 @@
-# Frontend Design Skill for Claude Code and Codex
+# Frontend Design Skill for Claude Code, Codex, and Gemini CLI
 
-An enhanced frontend design skill that produces production-grade UI code with high design fidelity. Works with both [Claude Code](https://github.com/anthropics/claude-code) (Anthropic) and [Codex](https://github.com/openai/codex) (OpenAI). Replaces generic Bootstrap-looking output with intentional aesthetic direction, systematic design tokens, and polished visual execution.
+An enhanced frontend design skill that produces production-grade UI code with high design fidelity. Works with [Claude Code](https://github.com/anthropics/claude-code) (Anthropic), [Codex](https://github.com/openai/codex) (OpenAI), and [Gemini CLI](https://github.com/google-gemini/gemini-cli) (Google). Replaces generic Bootstrap-looking output with intentional aesthetic direction, systematic design tokens, and polished visual execution.
 
 ## Features
 
@@ -24,6 +24,14 @@ mkdir -p ~/.claude/skills/frontend-design && curl -o ~/.claude/skills/frontend-d
 ```bash
 mkdir -p ~/.codex/skills/frontend-design && curl -o ~/.codex/skills/frontend-design/SKILL.md https://raw.githubusercontent.com/Ilm-Alan/frontend-design/main/SKILL.md
 ```
+
+### Gemini CLI
+
+```bash
+mkdir -p ~/.gemini/skills/frontend-design && curl -o ~/.gemini/skills/frontend-design/SKILL.md https://raw.githubusercontent.com/Ilm-Alan/frontend-design/main/SKILL.md
+```
+
+After installation, run `/skills reload` in Gemini CLI or restart the session to load the skill.
 
 ## Usage
 
