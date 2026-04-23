@@ -1,8 +1,10 @@
 # frontend-design
 
-Frontend design skill for Claude Code, Codex, and Gemini CLI. Demands a specific reference, a governing move, and an opinion before the code. Refuses to ship generic.
+Frontend design skill for Claude Code, Codex, and Gemini CLI. Commits to one of ten aesthetic archetypes so the UI output looks chosen, not defaulted.
 
 ## Install
+
+The skill is a folder (SKILL.md plus a references corpus), so install with `git clone`:
 
 ### Claude Code
 
@@ -32,41 +34,89 @@ git clone https://github.com/Ilm-Alan/frontend-design.git ~/.gemini/skills/front
 
 Verify with `/skills list`.
 
-## How it works
+## Use it
 
-Before writing code, the skill demands four specific answers:
-
-1. **What is this surface for?** Not the brand. Not the industry. What does the page *do* for the person reading it?
-2. **What specific design does this remind you of?** A real, nameable thing. A site URL, a designer's work, a magazine spread, a record sleeve, a film title sequence. Not a category.
-3. **What is the governing move?** The one move someone would remember a month after seeing the design. Not the palette. Not the typeface. The move.
-4. **What would a senior designer raise an eyebrow at?** The bold choice. If nothing, the design has no opinion.
-
-Then the HTML+CSS, written to carry those commitments into every visible decision.
-
-## Example
-
-For *"Design a landing page for a Brooklyn punk record label"*, the preamble would look like:
+Invoke contextually in any UI prompt:
 
 ```
-1. Serves the label's refusal — streaming-free, vinyl-only, basement
-   venue. The page should feel made by the hands that press the records.
-2. Feels like Maximum Rocknroll issue 100, January 1992 — the cover
-   and the classifieds pages together, not one or the other.
-3. A "NOT ON SPOTIFY" rubber stamp, pressed nine times across the page
-   at inconsistent angles. The same stamp by the same tired hand. The
-   whole page is punctuated by this one gesture.
-4. Default browser controls — native select, unstyled button, underlined
-   blue links that stay blue. Every other AI would have styled these.
+Using the frontend design skill, design a landing page for a Brooklyn punk record label
 ```
 
-Followed by the single-file HTML document implementing each commitment.
+The skill names three candidate archetypes, picks one with stated reasoning, defines the type, palette, and texture system, and writes a single-file HTML+CSS document. The output begins with a short preamble naming every commitment.
 
-## Why this instead of the default skill
+## What it produces
 
-Anthropic's default `frontend-design` skill encourages bold direction but treats archetype as a category — "Editorial," "Brutalist," "Maximalist." The result is defensible outputs that could have been made by any competent AI: Fraunces + JetBrains Mono, ivory-and-ink palette, tasteful vermilion accent, paper grain. Different briefs, same production.
+For the punk-label prompt above, the preamble looks like:
 
-This skill refuses category answers. A specific named reference cannot be hedged. A governing move cannot be averaged across options. An eyebrow-raise cannot be tasteful. Together, they force commitment — and the commitment is what makes the output a design rather than a default.
+```
+Direction. Lo-Fi / Zine, Punk Flyer variant. The brief is a Brooklyn
+hardcore label that refuses streaming and runs a basement venue; the
+surface should look like it was photocopied at Kinko's in 1981 and
+taped together on a kitchen table.
+
+Values: anti-modernist. Coherence is the failure mode. Mixed faces
+wielded as deliberate clash, halftone toner bleed, handwritten marker
+on top of set type, stamps with uneven ink. Refinement would betray
+the label.
+
+Differentiator: a "NOT ON SPOTIFY" rubber stamp recurring nine times
+across the page at inconsistent sizes and rotations.
+
+Type: Times New Roman, Helvetica via Archivo Black, Courier, Georgia,
+Impact. All system fonts wielded as style. Special Elite for the
+typewritten manifesto, Permanent Marker for marginalia.
+
+Palette: xeroxed-cream #EFE4C2, toner-black #0A0807, one shock-pink
+Riso second pass #FF2E88. Three colors, no tuning.
+
+Texture: SVG paper grain, halftone-dot record sleeves, rotated tape
+strips, hard 6x6 ink-bleed shadows. Snap motion only.
+```
+
+Followed by a single-file HTML document implementing every choice.
+
+## The ten archetypes
+
+| Archetype | Values | Character |
+|-----------|--------|-----------|
+| Editorial / Magazine | Modernist | Strong typography, refined grid, generous whitespace |
+| Swiss / International | Modernist | Geometric precision, sans-serif, systematic spacing |
+| Minimalist / Refined | Modernist | Restraint, micro-contrast, meticulous spacing |
+| Industrial / Utilitarian | Modernist | Functional density, instrument-panel, monochrome with signal color |
+| Art Deco / Geometric | Modernist (ornamental) | Symmetry, metallic accents, ornamental precision |
+| Maximalist / Expressive | Modernist (Aurora) or anti-modernist (Memphis) | Layered composition, saturated color, dynamic motion |
+| Retro-Futuristic | Hybrid: nostalgic precision | CRT, neon, scanlines, synthwave and cyberpunk |
+| Organic / Natural | Hybrid: warmth-as-discipline | Soft geometry, earthy palettes, hand-drawn marks |
+| Brutalist / Raw | Anti-modernist | System fonts as style, exposed structure, anti-decoration |
+| Lo-Fi / Zine | Anti-modernist | Rough texture, deliberate clash, photocopier artifacts |
+
+## Why this and not the default skill
+
+Anthropic ships a `frontend-design` skill with Claude Code that encourages bold direction. In practice it funnels to polished Editorial when the brief is ambiguous, because its evaluation criteria (coherence, refinement, intention) are themselves modernist values. Archetypes that reject those values, like Brutalist and Lo-Fi, fail the skill's own checks even when they fit the brief better. The result is a skill that lists ten archetypes but tends to produce variations of one.
+
+This skill names that bias and rebuilds around it:
+
+- The model picks an archetype after considering three candidates against the brief, using a domain-keyed reference (`references/routing.md`).
+- Each archetype is tagged as modernist, anti-modernist, or hybrid, and the model names the stance in the output preamble.
+- The procedure splits at the system step. Modernist archetypes commit to refined craft (specific typefaces, cited palettes, smooth motion). Anti-modernist archetypes commit to anti-craft (system fonts wielded as style, deliberate clash, snap motion). Per-archetype values commitments live in `references/values.md`.
+- The references folder is four files: `routing.md`, `values.md`, `palettes.md`, and `index.md` (reading guide). Each is consulted at a specific decision point in the operating mode.
+
+In practice you get a Brutalist record-label page that ships Times New Roman with `box-shadow: 6px 6px 0 #000`, not Editorial dressed up with a punk theme. You get an Industrial dashboard in IBM Plex Mono with no grain overlay, not an editorial broadsheet pretending to be data. Different artifacts across archetypes, not the same one in different costumes.
+
+## Repository structure
+
+```
+frontend-design/
+├── SKILL.md
+├── references/
+│   ├── index.md      reading guide for the model
+│   ├── routing.md    domain-keyed candidate archetypes for the deliberation step
+│   ├── values.md     per-archetype values commitments; supersedes §3 for anti-modernist
+│   └── palettes.md   semantic-token palettes by product domain and by mood
+├── README.md
+└── LICENSE.txt
+```
 
 ## License
 
-MIT.
+MIT. See [LICENSE.txt](LICENSE.txt).
