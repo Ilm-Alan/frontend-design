@@ -1,13 +1,19 @@
 ---
 name: frontend-design
-description: Bespoke frontend engineering focused purely on aesthetic excellence. Invoke for web components, pages, dashboards, applications, or any UI requiring distinctive visual execution. Outputs functional code with intentional aesthetic direction and creative craft.
+description: Bespoke frontend engineering focused purely on aesthetic excellence — modernist or anti-modernist, whichever the chosen archetype demands. Invoke for web components, pages, dashboards, applications, or any UI requiring distinctive visual execution. Outputs functional code with full commitment to the archetype's values, refining or refusing refinement as the direction calls for.
 ---
 
 # Frontend Design Skill
 
 ## Core Thesis
 
-Great frontend design is disciplined translation: a clear, context-specific aesthetic intent (archetype + one differentiator) translated into a coherent system of typography, color tokens, layout, motion, and texture.
+Great frontend design is a committed answer to *what this surface wants to be*. The answer might be discipline (refined typography, coherent system, intention in every detail). It might be chaos (deliberate clash, productive contradiction, system fonts wielded as style). It might be friction (visible structure, snap motion, anti-decoration). It might be ornament, nostalgia, deliberate imperfection — depending on the archetype the brief calls for.
+
+**Each archetype carries its own values.** Modernist archetypes — Editorial, Swiss, Minimalist, Industrial, Art Deco — reward refinement, coherence, and intention. Anti-modernist archetypes — Brutalist, Lo-Fi, chaotic Maximalism — reward roughness, contradiction, and deliberate mess. Hybrid archetypes — Retro-Futuristic, Organic, modernist Maximalism — operate by their own value systems (nostalgic precision, warmth-as-discipline, ambitious-but-coherent layering).
+
+Commit to the archetype's *values* as fully as you commit to its visual moves. The failure modes are symmetric: producing anti-modernist work modernistically (a sanitised Brutalism, a polished Lo-Fi, a coherent Memphis-Maximalism) and producing modernist work without commitment (a watered-down Editorial). Both are betrayals of the chosen direction.
+
+Rich reference material lives in `references/`. The SKILL.md carries the decision procedure; the references carry the raw aesthetic material *and the archetype's actual values*. For anti-modernist archetypes especially, the archetype's reference file is authoritative — it names what the archetype refuses, not just what it embraces.
 
 ---
 
@@ -15,116 +21,147 @@ Great frontend design is disciplined translation: a clear, context-specific aest
 
 Before writing code, complete this sequence:
 
-1. **Context**: Identify purpose, users, domain, and content density. Output a clear problem statement.
-2. **Aesthetic Direction**: Select one archetype from Section 2 and state it explicitly.
-3. **Differentiator**: Define one memorable anchor—a signature interaction, typographic move, layout motif, texture, or material treatment.
-4. **System**: Define tokens and rules: type scale, spacing rhythm, palette mapping, elevation levels.
-5. **Implementation**: Outline structure and interaction model, then build.
+1. **Context** — Identify purpose, audience, domain, and content density. State the problem in one sentence.
+2. **Aesthetic Direction** — Before committing, name three candidate archetypes that could fit this brief and one sentence on what each would do with it. Consult `references/archetype-by-domain.md` to ground candidates in the surface's grammar. Pick the candidate whose grammar most directly serves the brief's content and purpose. State the chosen archetype, **its values stance** (modernist / anti-modernist / hybrid), and the reason in one line. For variants, typefaces, composition moves, and visual references within it, read `references/styles/<archetype>.md`.
+3. **Differentiator** — Define one memorable anchor: a signature interaction, typographic move, layout motif, texture, or material treatment. Consult `references/differentiators.md`.
+4. **System** — Translate the chosen direction into specific commitments. The interpretation depends on the archetype's values:
+   - **For modernist archetypes** (Editorial, Swiss, Minimalist, Industrial, Art Deco, modernist Maximalism): pick a specific display/body pairing from `references/typography/pairings.md` or from the archetype's native faces. Derive a palette from `references/palettes/by-domain.md` or `by-mood.md` with any tuning named. Texture stays flat unless the archetype's reference file names a texture as one of its moves. Spacing, elevation, and motion follow the archetype's reference file.
+   - **For anti-modernist archetypes** (Brutalist, Lo-Fi, chaotic Maximalism): commit to the archetype's *anti-craft*. System fonts wielded with conviction (Brutalist), mixed faces selected for collision (Lo-Fi), oversized expressive display in productive clash (chaotic Maximalism). The catalog references are inspiration sources; the archetype's reference file is authoritative for what it values and what it refuses. **The archetype's reference file supersedes the §3 modernist defaults below — work from it directly.**
+   - **For hybrid archetypes** (Retro-Futuristic, Organic): the archetype's reference file names its specific value system; follow it.
+5. **Implementation** — Outline structure and interaction model, then build.
 
-**Directive:** Commit fully to the chosen direction. Do not average multiple styles into a bland middle. Hybridize only when you can articulate the governing rule for the hybrid.
+Commit fully to the chosen direction *and its values*. Hybridize only when you can articulate the governing rule for the hybrid.
 
 ---
 
 ## 2. Aesthetic Archetypes
 
-Select one archetype as the foundation:
+Each archetype belongs to a kind of surface — its grammar fits some briefs and pulls against others. Match the archetype to the brief's content and purpose:
 
-- **Editorial / Magazine**: Strong typographic hierarchy, generous whitespace, refined grid. Use pull quotes, drop caps, column layouts, and serif display type.
-- **Swiss / International**: Geometric precision, sans-serif dominance, systematic spacing. Apply strict grids, Akzidenz/Helvetica lineage typefaces, and asymmetric balance.
-- **Brutalist / Raw**: Exposed structure, high contrast, anti-decorative. Embrace monospace type, visible borders, system UI elements, and raw HTML aesthetic.
-- **Minimalist / Refined**: Restraint, micro-contrast, meticulous spacing. Deploy limited palettes, ample whitespace, subtle shadows, and precise alignment.
-- **Maximalist / Expressive**: Layered composition, bold color, dynamic motion, visual density. Use overlapping elements, animated gradients, and complex grid breaks.
-- **Retro-Futuristic**: Nostalgic UI cues, neon accents, CRT aesthetics. Apply scanlines, glitch effects, terminal green, pixel fonts, and glow.
-- **Organic / Natural**: Soft geometry, earthy palettes, tactile texture. Incorporate rounded shapes, grain overlays, hand-drawn elements, and warm tones.
-- **Industrial / Utilitarian**: Functional aesthetic, monochrome, dense grids. Build data-heavy layouts with instrument-panel vibes and no ornamentation.
-- **Art Deco / Geometric**: Symmetry, metallic accents, ornamental precision. Use fan shapes, gold/brass tones, decorative borders, and Gatsby-era typography.
-- **Lo-Fi / Zine**: Rough textures, collage aesthetic, deliberate imperfection. Apply torn edges, mixed type, print artifacts, and halftone/duotone effects.
+- **Text-led** (publications, long-form, brand storytelling, considered reading) → Editorial, Lo-Fi
+- **Clarity-led** (documentation, brand systems, modern tech) → Swiss, Minimalist
+- **Data-led** (dashboards, observability, analytics, financial terminals) → Industrial, Swiss
+- **Warmth-led** (wellness, food, craft, lifestyle) → Organic, Minimalist
+- **Spectacle-led** (creative agencies, gaming, music, brand experiences, hero campaigns) → Maximalist, Retro-Futuristic
+- **Restraint-led** (luxury, premium consumer, considered tech) → Minimalist, Editorial
+- **Edge-led** (indie tools, anti-design, intentional friction, punk-adjacent) → Brutalist, Lo-Fi
+- **Nostalgia-led** (gaming, music, period-evocative) → Retro-Futuristic, Art Deco
+- **Opulence-led** (hospitality, fashion, fragrance, period-appropriate) → Art Deco, Editorial
+
+The list below is alphabetical with each archetype tagged by its values stance. For domain-keyed archetype guidance, read `references/archetype-by-domain.md`.
+
+- **Art Deco / Geometric** [modernist with ornament] — Symmetry, metallic accents, ornamental precision. → `references/styles/art-deco.md`
+- **Brutalist / Raw** [anti-modernist] — Exposed structure, system defaults wielded as style, anti-decoration. → `references/styles/brutalist.md`
+- **Editorial / Magazine** [modernist] — Strong typographic hierarchy, refined grid, generous whitespace. → `references/styles/editorial.md`
+- **Industrial / Utilitarian** [modernist] — Functional aesthetic, monochrome, dense data grids, instrument-panel energy. → `references/styles/industrial.md`
+- **Lo-Fi / Zine** [anti-modernist] — Rough texture, deliberate clash, photocopier artifacts, productive imperfection. → `references/styles/lo-fi.md`
+- **Maximalist / Expressive** [modernist (Aurora, Liquid Glass) OR anti-modernist (Memphis, Vibrant Block) — see file] — Layered composition, saturated color, dynamic motion, visual density. → `references/styles/maximalist.md`
+- **Minimalist / Refined** [modernist] — Restraint, micro-contrast, meticulous spacing, precise alignment. → `references/styles/minimalist.md`
+- **Organic / Natural** [hybrid: warmth-as-discipline] — Soft geometry, earthy palette, tactile texture, hand-drawn marks. → `references/styles/organic.md`
+- **Retro-Futuristic** [hybrid: nostalgic precision] — Nostalgic UI cues, neon accents, CRT texture, synthwave/cyberpunk lineage. → `references/styles/retro-futuristic.md`
+- **Swiss / International** [modernist] — Geometric precision, sans-serif dominance, systematic spacing, numerical composition. → `references/styles/swiss.md`
 
 ---
 
-## 3. Technical Implementation
+## 3. The Modernist Aesthetic System
+
+The principles below describe **modernist craft** — refinement, coherence, intention. They apply to Editorial, Swiss, Minimalist, Industrial, Art Deco, and modernist Maximalism (Aurora, Liquid Glass, 3D / Hyperrealism).
+
+For **anti-modernist archetypes** (Brutalist, Lo-Fi, chaotic Maximalism), the principles below become reference points to *react against*, not rules to follow. The archetype's own reference file is authoritative — it names the specific moves that constitute the archetype's anti-craft. When the chosen archetype is anti-modernist, skip §3 and work from the archetype's reference file directly.
+
+For **hybrid archetypes** (Retro-Futuristic, Organic), apply §3 as far as the archetype's value system supports — the archetype's reference file calls out where it diverges.
 
 ### 3.1 Typography
 
-Choose context-appropriate typefaces that reinforce the archetype—avoid defaults like Arial, Inter, Roboto, and system stacks. Establish hierarchy through a distinct display/body pairing, using size, weight, case, and spacing to create 3–5 clear levels.
+Choose typefaces that carry the archetype. Pair a distinctive display face with a body face — scale, weight, case, and tracking build 3–5 clear hierarchy levels. Let body fall back to a system stack only where the display face already carries the identity alone.
 
-Use `clamp()` for fluid responsive scaling (e.g., `font-size: clamp(1rem, 2.5vw, 1.5rem)`). Tune `line-height` carefully: 1.4–1.6 for body text, 1.1–1.2 for display type. Adjust `letter-spacing` and `font-feature-settings` for refinement.
+Set type fluidly across viewport sizes. Tune line-height to 1.45–1.65 for body and 1.05–1.2 for display. Use tabular figures for aligned numerics. Tighten tracking at display sizes; let body breathe at default tracking or slightly open.
 
-### 3.2 Color System
+Create dramatic scale contrast between display and body — aim for ~4:1 or higher. Let hierarchy emerge from weight, case, tracking, and scale working together.
 
-Structure your palette with CSS custom properties: `--color-surface`, `--color-text`, `--color-muted`, `--color-primary`, `--color-accent`, `--color-border`. Add semantic tokens for feedback states: `--color-success`, `--color-warning`, `--color-error`.
+For distilled display/body pairings across modernist archetypes, consult `references/typography/pairings.md`.
 
-Distribute color intentionally—dominant (60%) + supporting (30%) + accent (10%). Avoid timid, evenly-split palettes.
+### 3.2 Typographic Craft
 
-Implement theme support via `prefers-color-scheme` media query or explicit class toggle.
+Align type optically rather than geometrically. The period after a digit sits a hair higher than a comma; capital letters need their own optical baseline against lowercase; hanging punctuation pulls quote marks outside the column edge so body text aligns true.
 
-### 3.3 Motion & Interaction
+Use italic as counterpoint, rather than only as emphasis — a different voice for asides, captions, attribution, and quotation. Reach for small caps and old-style figures where the typeface offers them. Activate the ligatures the face supports.
 
-Motion must communicate state, hierarchy, or affordance—never decoration alone. Use custom `cubic-bezier()` timing functions; avoid `linear` for UI transitions. Orchestrate page-load sequences with staggered `animation-delay` offsets (50–100ms increments).
+Open up tracking on display caps (`+0.05em` to `+0.2em` for editorial, wider for Art Deco letter-spaced caps). Tighten it at hero display sizes (`-0.02em` to `-0.04em`). Let body tracking stay native to the typeface.
 
-Use `IntersectionObserver` for scroll-triggered animations. Prefer CSS for HTML/vanilla JS projects. Use Motion (Framer Motion) for React/Vue when available.
+### 3.3 Color
 
-### 3.4 Spatial Composition
+Distribute color with 60/30/10 dominance — one lead surface, one supporting field, one accent that earns attention. Derive the palette from the product domain and emotional register: trust-blue for SaaS, deep ink with gold for luxury, saturated primaries for playful B2C, desaturated neutrals with one ink accent for editorial.
 
-Use CSS Grid for 2D layouts and Flexbox for linear distribution. Define a consistent spacing scale with custom properties: `--space-xs`, `--space-sm`, `--space-md`, `--space-lg`, `--space-xl`.
+The palette has roles — surface, foreground, primary, accent, muted, border, plus the semantic states — and every component draws from those roles consistently rather than reinventing the palette per surface.
 
-Treat whitespace as a structural element, not leftover space. Create hierarchy through dramatic scale contrast (e.g., 4:1 heading-to-body ratio).
+Design light and dark variants as a pair, tuned per archetype. Dark mode shifts tonally with desaturated surfaces and temperature-calibrated darks — a treatment to compose, rather than an inversion of light mode.
 
-Break the grid intentionally—overlap elements with `position: absolute/relative` and `z-index` for purposeful disruption. Use asymmetric alignments to create visual tension; avoid defaulting to center alignment. Deploy full-bleed moments that break container boundaries for emphasis using viewport units.
+For product-domain palettes with specific hex values, consult `references/palettes/by-domain.md`. For mood-keyed palettes, consult `references/palettes/by-mood.md`.
 
-### 3.5 Visual Depth & Texture
+### 3.4 Color Theory
 
-Build layered shadows with multiple `box-shadow` values using varying blur/spread for realistic depth. Define elevation levels: `--shadow-sm`, `--shadow-md`, `--shadow-lg`.
+Color thinking happens on three axes: **value** (light to dark), **chroma** (saturated to neutral), and **temperature** (warm to cool). A coherent palette varies one or two of these axes while holding the third — vary value across a near-monochrome scheme, vary chroma against held value for emotional register, vary temperature for warmth or coolness.
 
-For glassmorphism, use `backdrop-filter: blur()` with semi-transparent backgrounds (check browser support). Add noise and grain via SVG `<feTurbulence>` filter or CSS `background-image` with texture overlay.
+Harmonic structures set the tension level: **analogous** (calm), **complementary** (high tension), **triadic** (balanced energy), **split-complementary** (energetic without aggression), **monochromatic** (meditative). Match the harmonic to the archetype's emotional register.
 
-Create gradients with intention—mesh gradients, radial compositions, multi-stop configurations. Avoid generic purple→blue linear gradients.
+Account for **simultaneous contrast** — a color reads differently against different surrounds. Test colors in their intended context. Account for **value over hue** — a composition that holds together in greyscale will hold together in color.
 
-Use `clip-path: polygon()` or `circle()` for non-rectangular shapes. Design borders and dividers with decorative intent, including custom `border-image` and creative separators that match the archetype.
+### 3.5 Composition
 
-Apply texture overlays appropriate to the style: halftone, duotone, or stipple for print aesthetics; scanlines for retro-futuristic.
+Treat whitespace as a structural element, rather than leftover space. The page reads as a *figure-ground* composition — what is figure and what is ground is decided.
 
----
+Compose for visual rhythm: regular spacing intervals create calm; irregular intervals with intent create emphasis. Build tension through scale contrast, density contrast, alignment shifts. Release that tension before the next composition demands attention — every section earning emphasis dilutes the emphasis.
 
-## 4. Anti-Patterns
+Use asymmetric alignment by default. Commit to overlapping motifs across the whole composition. Deploy full-bleed sections to mark transitions and emphasize scale shifts. Spacing rhythm flows from a shared scale (4 pt or 8 pt base); depth flows from a shared elevation order.
 
-Explicitly avoid these markers of generic output:
+### 3.6 Motion
 
-**Typography**: Never use system font stacks, Inter/Roboto/Arial, or uniform sizing. Instead, choose distinctive, context-appropriate typefaces with clear hierarchy.
+Motion expresses state, hierarchy, or causality. Choose easing that matches the archetype — custom curves for refined UI, spring physics where the archetype calls for material weight.
 
-**Color**: Avoid purple-on-white gradients, evenly distributed palettes, and low contrast. Instead, commit to palettes with dominant/accent distribution.
+Timing as craft: 150–250 ms for micro-interactions, 200–400 ms for component transitions, ~500 ms for orchestrated reveals. Exits run shorter than enters. Stagger list and grid entrance by 30–50 ms per item.
 
-**Layout**: Reject centered card grids and predictable hero→cards→testimonials→footer structures. Instead, use asymmetric compositions, unexpected grid breaks, and purposeful whitespace.
+Smooth motion comes from animating compositor properties — transform and opacity carry weight without forcing the page to redraw. Orchestrate page entrance with staggered timings. Reveal scroll content as it enters the viewport. Carry continuity between scenes with shared-element transitions where the metaphor calls for it.
 
-**Motion**: Eliminate gratuitous animations, linear easing, and motion without purpose. Instead, use purposeful transitions, custom easing, and orchestrated sequences.
+Motion flavor is archetype-specific — quiet crossfades for editorial, spring physics for maximalist. See each style reference for tuning notes.
 
-**Details**: Replace stock illustrations and generic icons with bespoke graphics, custom iconography, and contextual imagery.
+### 3.7 Depth & Texture
 
-**Structure**: Make every visible element intentional. Transform any generic scaffolding into something that reinforces the aesthetic direction.
+Depth implies light. A consistent light source casts consistent shadows. Build layered shadows with varied blur and spread for real dimension. Decide elevation order once and apply it everywhere — cards, sheets, and modals share the same vocabulary of altitude.
 
----
+Glass surfaces blur the field beneath, suggesting layers of material. Grain warms surfaces with tactile noise. Non-rectangular silhouettes through clipping or custom borders break the rectangle and mark identity. Mesh or radial gradients carry mood through atmospheric field, rather than as ornament added on top.
 
-## 5. Output Contract
-
-Every implementation must deliver:
-
-- **Stated Direction**: Explicitly name the archetype and differentiator in 1–2 lines before code.
-- **Working Code**: Functional code that demonstrates the aesthetic direction.
-- **Design Tokens**: CSS custom properties for colors, spacing, typography, and shadows.
-- **Responsiveness**: Demonstrated via fluid layout, breakpoints, or container queries.
+Texture is archetype-specific. Surfaces stay flat by default; apply grain, scanlines, glass blur, halftone, duotone, exposed seams, or iridescence only when the chosen archetype's reference file names that texture as one of its moves — halftone or duotone for print-inflected styles, scanlines for retro-futuristic, film grain for organic, exposed seams for brutalist, iridescence for maximalist. Industrial and Swiss treat flatness as identity.
 
 ---
 
-## 6. Finish Checklist
+## 4. Output Contract
 
-Before delivering, verify:
+Every implementation delivers:
 
-- **Archetype Fidelity**: Does every visual choice reinforce the stated archetype?
-- **Differentiator**: Is the memorable anchor implemented, not just described?
-- **Token Coherence**: Are typography, spacing, and color tokens consistent throughout?
-- **Responsive Behavior**: Does it remain intentional on mobile, tablet, and wide desktop?
-- **Template Smell**: Is there any generic scaffolding remaining? Transform it.
+- **Stated direction** — A short preamble *in a designer's prose* before the code, naming the choices with conviction. Name the archetype, its **values stance**, and why; name the differentiator and what it does; name the type pairing (display + body, by face name, OR system fonts wielded as style for anti-modernist work); name the palette source and any tuning (or the deliberate clash for anti-modernist work); state the texture stance. Read it back: would a designer recognise their voice in it, or does it read as a checklist?
+
+  *Voice for modernist work:*
+  > **Direction.** Industrial / Observability — the brief's verb is *measure*, and the surface is an instrument face, not a story. **Values:** modernist — refinement, coherence, intention. **Differentiator:** a calibrated tick-rule running across the masthead and threading every card edge — the dashboard reads as one continuous instrument. **Type:** IBM Plex Mono throughout for numerals and labels; Inter only for the one prose paragraph. **Palette:** derived from the Financial Dashboard entry — warm-black `#0B0C0A`, bone foreground, acid-lime signal `#C6FF4A` for the live series, amber `#F5B338` for drift. **Texture:** flat. Industrial holds flatness as identity.
+
+  *Voice for anti-modernist work:*
+  > **Direction.** Brutalist / Raw — the brief is a punk record label, and the surface should refuse polish. **Values:** anti-modernist — anti-decoration, exposed structure, system defaults as deliberate style. **Differentiator:** every interactive element is a default browser button (no custom styles) on a `#FFFF00` field, and underlined links stay web-default-blue. **Type:** Times New Roman for body, Helvetica Black at 200pt for display — both shipping system fonts, both wielded with conviction. **Palette:** pure `#000000`, pure `#FFFFFF`, pure `#FF0000`. No tuning. **Texture:** none — the page refuses finish. Hard drop-shadows (`box-shadow: 8px 8px 0 #000`) are the only depth, and they announce themselves as graphic.
+
+- **Visible commitment** — Every choice in the rendered output traceable to the archetype and its values. The aesthetic shows, rather than only being stated.
+- **Coherent commitment** — Modernist archetypes show coherence as token consistency (palette, type rhythm, spacing, elevation, motion expressed as shared rules). Anti-modernist archetypes show coherence as **consistent commitment to the archetype's anti-craft** — every visible element refusing the same things in the same way.
 
 ---
 
-Intention in every choice. Precision in every detail. Nothing left to default.
+## 5. Intention Check
+
+Before delivering:
+
+- **Archetype deliberation** — Did I name three candidates and reason about fit before committing, rather than reaching for the first that came to mind?
+- **Values commitment** — Did I commit to the archetype's *actual* values? Modernist archetypes demand refinement and coherence; anti-modernist archetypes demand roughness and productive contradiction. Compromising either way is the failure mode.
+- **Archetype fidelity** — Can I name the archetype behind each visible choice? For anti-modernist work, can I also name what each choice is *refusing*?
+- **Differentiator** — Is the memorable anchor actually implemented in the rendered output, rather than only described?
+- **Specificity** — Are choices deliberate? Modernist deliberation = named typefaces from the catalog, cited palette entries, tuned hex values. Anti-modernist deliberation = system defaults wielded with conviction, deliberate mismatch, unapologetic primaries. Both are specificity.
+- **Voice** — Does the preamble read as a designer naming their choices, with conviction, rather than as a checklist?
+- **Template resistance** — Does any visible choice read as scaffolding rather than expression? Transform it until it carries the archetype.
+
+Intention in every choice. Precision in every detail — including the precision of deliberate imperfection. The archetype carries identity; *its values* shape what counts as success.
