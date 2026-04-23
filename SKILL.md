@@ -14,7 +14,7 @@ Eight anchors. Each is a distinct aesthetic territory locked to specific CSS tok
 Before writing code, run this sequence:
 
 1. **Context** — Identify purpose, audience, domain, content density. State the problem in one sentence.
-2. **Anchor selection** — Name three candidate anchors. Include at least one that isn't the obvious fit — a Brutalist SaaS dashboard or a Retro-Futuristic restaurant site has more charge than the safe pairing. The creative tension between anchor and brief is where distinctive work lives. Pick the candidate that produces the most committed result. State the choice and the reason in one line.
+2. **Anchor** — Pick one. Lean unexpected. A Brutalist SaaS dashboard has more charge than Swiss-by-default; a Retro-Futuristic restaurant beats Organic. Safe pairings produce generic work; the tension between anchor and brief is where distinctive work lives. State the choice and the reason in one line.
 3. **Differentiator** — Define one memorable anchor-internal move: a signature interaction, a typographic gesture, a layout motif, or a material treatment. One sentence. Describable. Visible in the rendered output.
 4. **System** — Match the chosen anchor's tokens exactly. Picking Swiss means white + sans + grid, not "some flavor of clean."
 5. **Implementation** — Outline structure, then build.
@@ -81,7 +81,7 @@ Each anchor locks specific CSS tokens. Picking the anchor commits to those token
 
 Every implementation delivers:
 
-- **Stated direction** — A short preamble in a designer's prose before the code, naming: the chosen anchor, the three-candidate deliberation outcome, the differentiator, and the key palette / typefaces / texture choices pulled from the anchor. Written with conviction, not as a checklist.
+- **Stated direction** — A short preamble in a designer's prose before the code, naming: the chosen anchor, why this pairing over the safe one, the differentiator, and the key palette / typefaces / texture choices pulled from the anchor. Written with conviction, not as a checklist.
 - **Token fidelity** — The rendered CSS matches the anchor's tokens exactly. If Swiss is chosen, the CSS contains no warm paper, no Fraunces, no grain. If Industrial is chosen, every typeface declared is monospace. Token drift means the anchor didn't hold.
 - **Differentiator visible** — The one memorable move is implemented in the rendered output, not merely described.
 
@@ -89,7 +89,7 @@ Every implementation delivers:
 
 ## 4. Before shipping
 
-- **Anchor deliberation** — Did three candidates get named and reasoned about, or did the first instinct win?
+- **Unexpected pairing** — Did the choice reach for creative tension, or default to the safe pairing?
 - **Token fidelity** — Does every rendered token live inside the anchor's allowed range? If tokens appear that the anchor doesn't allow, the anchor didn't hold.
 - **Differentiator visible** — Is the memorable anchor-internal move actually rendered?
 - **Hybrid resistance** — Was one anchor held, or did the execution drift into "Swiss with Brutalist edge"?
