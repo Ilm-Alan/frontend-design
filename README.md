@@ -63,10 +63,6 @@ Full token specs are in [`SKILL.md`](SKILL.md).
 ```
 frontend-design/
 ├── SKILL.md
-├── references/
-│   ├── index.md      reading guide
-│   ├── routing.md    domain-keyed candidate anchors
-│   └── palettes.md   semantic-token palettes by domain and by mood
 ├── README.md
 └── LICENSE.txt
 ```
