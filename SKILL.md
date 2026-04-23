@@ -14,9 +14,9 @@ Eight anchors. Each is a distinct aesthetic territory locked to specific CSS tok
 Before writing code, run this sequence:
 
 1. **Context** — Identify purpose, audience, domain, content density. State the problem in one sentence.
-2. **Anchor selection** — Name three candidate anchors that could fit. One sentence each on what each would do with the brief. Consult `references/routing.md` to ground candidates in the surface's grammar. Pick the candidate whose grammar most directly serves the brief. State the choice and the reason in one line.
+2. **Anchor selection** — Name three candidate anchors. Include at least one that isn't the obvious fit — a Brutalist SaaS dashboard or a Retro-Futuristic restaurant site has more charge than the safe pairing. The creative tension between anchor and brief is where distinctive work lives. Pick the candidate that produces the most committed result. State the choice and the reason in one line.
 3. **Differentiator** — Define one memorable anchor-internal move: a signature interaction, a typographic gesture, a layout motif, or a material treatment. One sentence. Describable. Visible in the rendered output.
-4. **System** — Match the chosen anchor's tokens exactly. Tune the palette within the anchor's allowed range using `references/palettes.md` for domain-specific tuning. Picking Swiss means white + sans + grid, not "some flavor of clean."
+4. **System** — Match the chosen anchor's tokens exactly. Picking Swiss means white + sans + grid, not "some flavor of clean."
 5. **Implementation** — Outline structure, then build.
 
 Commit fully to one anchor. Hybridising ("Swiss with Brutalist edge") is a category error — each signature excludes the others by construction.
