@@ -96,10 +96,10 @@ Anthropic ships a `frontend-design` skill with Claude Code that encourages bold 
 
 This skill names that bias and rebuilds around it:
 
-- The model picks an archetype after considering three candidates against the brief, using a domain-keyed reference (`references/archetype-by-domain.md`).
+- The model picks an archetype after considering three candidates against the brief, using a domain-keyed reference (`references/routing.md`).
 - Each archetype is tagged as modernist, anti-modernist, or hybrid, and the model names the stance in the output preamble.
-- The procedure splits at the system step. Modernist archetypes commit to refined craft (specific typefaces, cited palettes, smooth motion). Anti-modernist archetypes commit to anti-craft (system fonts wielded as style, deliberate clash, snap motion).
-- A reference corpus (16 files, around 1,900 lines) sits in `references/` and gets consulted on demand. The skill prompt stays small; the catalog stays rich.
+- The procedure splits at the system step. Modernist archetypes commit to refined craft (specific typefaces, cited palettes, smooth motion). Anti-modernist archetypes commit to anti-craft (system fonts wielded as style, deliberate clash, snap motion). Per-archetype values commitments live in `references/values.md`.
+- The references folder is four files: `routing.md`, `values.md`, `palettes.md`, and `index.md` (reading guide). Each is consulted at a specific decision point in the operating mode.
 
 In practice you get a Brutalist record-label page that ships Times New Roman with `box-shadow: 6px 6px 0 #000`, not Editorial dressed up with a punk theme. You get an Industrial dashboard in IBM Plex Mono with no grain overlay, not an editorial broadsheet pretending to be data. Different artifacts across archetypes, not the same one in different costumes.
 
@@ -109,13 +109,10 @@ In practice you get a Brutalist record-label page that ships Times New Roman wit
 frontend-design/
 ├── SKILL.md
 ├── references/
-│   ├── styles/                  10 archetype files
-│   ├── palettes/
-│   │   ├── by-domain.md         25+ product-type palettes with semantic tokens
-│   │   └── by-mood.md           15 mood-keyed palettes
-│   ├── typography/pairings.md   32 display/body type pairings
-│   ├── differentiators.md       50+ signature anchor moves
-│   └── archetype-by-domain.md   domain to archetype routing
+│   ├── index.md      reading guide for the model
+│   ├── routing.md    domain-keyed candidate archetypes for the deliberation step
+│   ├── values.md     per-archetype values commitments; supersedes §3 for anti-modernist
+│   └── palettes.md   semantic-token palettes by product domain and by mood
 ├── README.md
 └── LICENSE.txt
 ```

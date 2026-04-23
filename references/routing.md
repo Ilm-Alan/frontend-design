@@ -7,7 +7,7 @@ Each entry lists:
 - **Also consider** — archetypes that fit specific subgenres or yield in particular hands
 - **Pulls against the brief** — archetypes whose grammar typically fights the surface's purpose
 
-When the entry has no obvious match, infer from the brand's emotional register (use `palettes/by-mood.md` as a parallel guide).
+When the entry has no obvious match, infer from the brand's emotional register (use `palettes.md` (mood section) as a parallel guide).
 
 ---
 
