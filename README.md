@@ -36,10 +36,9 @@ Verify with `/skills list`.
 
 Each anchor locks specific palette, typefaces, and texture tokens. Picking an anchor commits to those tokens, not to a vibe. Before any code, the skill asks for:
 
-1. Three candidate anchors considered against the brief.
-2. A choice, with reasoning in one line.
-3. A memorable anchor-internal move.
-4. CSS that matches the chosen anchor's tokens.
+1. An anchor, picked with a bias toward unexpected pairings.
+2. A memorable anchor-internal move.
+3. CSS that matches the chosen anchor's tokens.
 
 If the rendered tokens drift outside the anchor's range, the anchor didn't hold.
 
