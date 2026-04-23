@@ -1,10 +1,8 @@
 # frontend-design
 
-Frontend design skill for Claude Code, Codex, and Gemini CLI. Commits to one of ten aesthetic archetypes so the UI output looks chosen, not defaulted.
+Frontend design skill for Claude Code, Codex, and Gemini CLI. Eight anchors with binding CSS tokens — each engineered to escape the AI design default (cream paper, Fraunces serif, warm ink, one warm-red accent, paper grain).
 
 ## Install
-
-The skill is a folder (SKILL.md plus a references corpus), so install with `git clone`:
 
 ### Claude Code
 
@@ -34,74 +32,39 @@ git clone https://github.com/Ilm-Alan/frontend-design.git ~/.gemini/skills/front
 
 Verify with `/skills list`.
 
-## Use it
+## The problem this solves
 
-Invoke contextually in any UI prompt:
+Ask any AI coding assistant to "design a beautiful landing page" and it ships a five-token pattern: cream-paper surface + Fraunces or Garamond serif + warm near-black ink + one warm-red accent + 2–5% paper grain. Every ambiguous brief lands there. Different briefs, same production. Recognisable on sight as AI-slop.
 
-```
-Using the frontend design skill, design a landing page for a Brooklyn punk record label
-```
+The underlying issue: the default is baked into the statistical centre of "good design" in training data. Telling the model to be bold doesn't move it. Naming archetypes ("Swiss," "Brutalist") doesn't move it — the model adopts the label in the preamble and ships the default CSS anyway.
 
-The skill names three candidate archetypes, picks one with stated reasoning, defines the type, palette, and texture system, and writes a single-file HTML+CSS document. The output begins with a short preamble naming every commitment.
+## How this skill works
 
-## What it produces
+The skill names the default explicitly, then offers eight anchors that escape it at the CSS token layer. Each anchor is a binding signature — specific palette, specific typefaces, specific texture. Picking an anchor commits to those tokens, not to a vibe.
 
-For the punk-label prompt above, the preamble looks like:
+Before writing code, the skill demands:
 
-```
-Direction. Lo-Fi / Zine, Punk Flyer variant. The brief is a Brooklyn
-hardcore label that refuses streaming and runs a basement venue; the
-surface should look like it was photocopied at Kinko's in 1981 and
-taped together on a kitchen table.
+1. **Three candidate anchors**, with one sentence each on what each would do with the brief.
+2. **A choice** — which anchor's grammar most directly serves the surface, and why.
+3. **A differentiator** — one memorable move that's anchor-internal.
+4. **Signature commitment** — the rendered CSS must match the anchor's binding tokens.
 
-Values: anti-modernist. Coherence is the failure mode. Mixed faces
-wielded as deliberate clash, halftone toner bleed, handwritten marker
-on top of set type, stamps with uneven ink. Refinement would betray
-the label.
+There is no Editorial anchor. If a brief genuinely needs magazine-register output, it is producible without invoking the skill. Omitting Editorial puts a tax on the default choice and clears the path for the alternatives.
 
-Differentiator: a "NOT ON SPOTIFY" rubber stamp recurring nine times
-across the page at inconsistent sizes and rotations.
+## The eight anchors
 
-Type: Times New Roman, Helvetica via Archivo Black, Courier, Georgia,
-Impact. All system fonts wielded as style. Special Elite for the
-typewritten manifesto, Permanent Marker for marginalia.
+| Anchor | Binding signature |
+|---|---|
+| **Swiss** | Pure white, Akzidenz/Helvetica/Söhne sans, Swiss Red or International Orange accent, visible grid |
+| **Industrial** | Pitch black, IBM Plex Mono / JetBrains Mono throughout, one semantic signal color, flat |
+| **Brutalist** | Pure primary colors, system fonts (Times, Helvetica, Courier), hard offset shadows `Xpx Xpx 0 #000`, native browser controls |
+| **Aurora Maximalism** | Dark saturated gradient base, Inter/PP Neue Machina, mesh gradient surface, neon glow |
+| **Chaotic Maximalism** | Clashing pastels + neons, mixed typefaces, patterns on every surface, oversized display |
+| **Retro-Futuristic** | Pitch black + neon, period typefaces (VT323, Orbitron, Space Mono, Monoton), CRT scanlines or chromatic aberration |
+| **Organic** | Earth tones (sage, clay, terracotta, ochre) — never cream, humanist serif or warm sans, rounded corners, subtle grain |
+| **Lo-Fi** | Paper-yellow (not cream), mixed system fonts, rotated elements, halftone dots, Risograph misregistration |
 
-Palette: xeroxed-cream #EFE4C2, toner-black #0A0807, one shock-pink
-Riso second pass #FF2E88. Three colors, no tuning.
-
-Texture: SVG paper grain, halftone-dot record sleeves, rotated tape
-strips, hard 6x6 ink-bleed shadows. Snap motion only.
-```
-
-Followed by a single-file HTML document implementing every choice.
-
-## The ten archetypes
-
-| Archetype | Values | Character |
-|-----------|--------|-----------|
-| Editorial / Magazine | Modernist | Strong typography, refined grid, generous whitespace |
-| Swiss / International | Modernist | Geometric precision, sans-serif, systematic spacing |
-| Minimalist / Refined | Modernist | Restraint, micro-contrast, meticulous spacing |
-| Industrial / Utilitarian | Modernist | Functional density, instrument-panel, monochrome with signal color |
-| Art Deco / Geometric | Modernist (ornamental) | Symmetry, metallic accents, ornamental precision |
-| Maximalist / Expressive | Modernist (Aurora) or anti-modernist (Memphis) | Layered composition, saturated color, dynamic motion |
-| Retro-Futuristic | Hybrid: nostalgic precision | CRT, neon, scanlines, synthwave and cyberpunk |
-| Organic / Natural | Hybrid: warmth-as-discipline | Soft geometry, earthy palettes, hand-drawn marks |
-| Brutalist / Raw | Anti-modernist | System fonts as style, exposed structure, anti-decoration |
-| Lo-Fi / Zine | Anti-modernist | Rough texture, deliberate clash, photocopier artifacts |
-
-## Why this and not the default skill
-
-Anthropic ships a `frontend-design` skill with Claude Code that encourages bold direction. In practice it funnels to polished Editorial when the brief is ambiguous, because its evaluation criteria (coherence, refinement, intention) are themselves modernist values. Archetypes that reject those values, like Brutalist and Lo-Fi, fail the skill's own checks even when they fit the brief better. The result is a skill that lists ten archetypes but tends to produce variations of one.
-
-This skill names that bias and rebuilds around it:
-
-- The model picks an archetype after considering three candidates against the brief, using a domain-keyed reference (`references/routing.md`).
-- Each archetype is tagged as modernist, anti-modernist, or hybrid, and the model names the stance in the output preamble.
-- The procedure splits at the system step. Modernist archetypes commit to refined craft (specific typefaces, cited palettes, smooth motion). Anti-modernist archetypes commit to anti-craft (system fonts wielded as style, deliberate clash, snap motion). Per-archetype values commitments live in `references/values.md`.
-- The references folder is four files: `routing.md`, `values.md`, `palettes.md`, and `index.md` (reading guide). Each is consulted at a specific decision point in the operating mode.
-
-In practice you get a Brutalist record-label page that ships Times New Roman with `box-shadow: 6px 6px 0 #000`, not Editorial dressed up with a punk theme. You get an Industrial dashboard in IBM Plex Mono with no grain overlay, not an editorial broadsheet pretending to be data. Different artifacts across archetypes, not the same one in different costumes.
+Full binding signatures are in [`SKILL.md`](SKILL.md) §2.
 
 ## Repository structure
 
@@ -109,14 +72,13 @@ In practice you get a Brutalist record-label page that ships Times New Roman wit
 frontend-design/
 ├── SKILL.md
 ├── references/
-│   ├── index.md      reading guide for the model
-│   ├── routing.md    domain-keyed candidate archetypes for the deliberation step
-│   ├── values.md     per-archetype values commitments; supersedes §3 for anti-modernist
-│   └── palettes.md   semantic-token palettes by product domain and by mood
+│   ├── index.md      reading guide
+│   ├── routing.md    domain-keyed candidate anchors
+│   └── palettes.md   semantic-token palettes by domain and by mood
 ├── README.md
 └── LICENSE.txt
 ```
 
 ## License
 
-MIT. See [LICENSE.txt](LICENSE.txt).
+MIT.
