@@ -1,6 +1,6 @@
 # frontend-design
 
-Frontend design skill for Claude Code, Codex, and Gemini CLI. Eight anchors with binding CSS tokens — each engineered to escape the AI design default (cream paper, Fraunces serif, warm ink, one warm-red accent, paper grain).
+Frontend design skill for Claude Code, Codex, and Gemini CLI. Eight aesthetic anchors, each locking palette, typography, and texture to specific CSS tokens. Pick one per brief.
 
 ## Install
 
@@ -32,28 +32,20 @@ git clone https://github.com/Ilm-Alan/frontend-design.git ~/.gemini/skills/front
 
 Verify with `/skills list`.
 
-## The problem this solves
+## How it works
 
-Ask any AI coding assistant to "design a beautiful landing page" and it ships a five-token pattern: cream-paper surface + Fraunces or Garamond serif + warm near-black ink + one warm-red accent + 2–5% paper grain. Every ambiguous brief lands there. Different briefs, same production. Recognisable on sight as AI-slop.
+Each anchor locks specific palette, typefaces, and texture tokens. Picking an anchor commits to those tokens, not to a vibe. Before any code, the skill asks for:
 
-The underlying issue: the default is baked into the statistical centre of "good design" in training data. Telling the model to be bold doesn't move it. Naming archetypes ("Swiss," "Brutalist") doesn't move it — the model adopts the label in the preamble and ships the default CSS anyway.
+1. Three candidate anchors considered against the brief.
+2. A choice, with reasoning in one line.
+3. A memorable anchor-internal move.
+4. CSS that matches the chosen anchor's tokens.
 
-## How this skill works
-
-The skill names the default explicitly, then offers eight anchors that escape it at the CSS token layer. Each anchor is a binding signature — specific palette, specific typefaces, specific texture. Picking an anchor commits to those tokens, not to a vibe.
-
-Before writing code, the skill demands:
-
-1. **Three candidate anchors**, with one sentence each on what each would do with the brief.
-2. **A choice** — which anchor's grammar most directly serves the surface, and why.
-3. **A differentiator** — one memorable move that's anchor-internal.
-4. **Signature commitment** — the rendered CSS must match the anchor's binding tokens.
-
-There is no Editorial anchor. If a brief genuinely needs magazine-register output, it is producible without invoking the skill. Omitting Editorial puts a tax on the default choice and clears the path for the alternatives.
+If the rendered tokens drift outside the anchor's range, the anchor didn't hold.
 
 ## The eight anchors
 
-| Anchor | Binding signature |
+| Anchor | Tokens |
 |---|---|
 | **Swiss** | Pure white, Akzidenz/Helvetica/Söhne sans, Swiss Red or International Orange accent, visible grid |
 | **Industrial** | Pitch black, IBM Plex Mono / JetBrains Mono throughout, one semantic signal color, flat |
@@ -64,7 +56,7 @@ There is no Editorial anchor. If a brief genuinely needs magazine-register outpu
 | **Organic** | Earth tones (sage, clay, terracotta, ochre) — never cream, humanist serif or warm sans, rounded corners, subtle grain |
 | **Lo-Fi** | Paper-yellow (not cream), mixed system fonts, rotated elements, halftone dots, Risograph misregistration |
 
-Full binding signatures are in [`SKILL.md`](SKILL.md) §2.
+Full token specs are in [`SKILL.md`](SKILL.md).
 
 ## Repository structure
 
