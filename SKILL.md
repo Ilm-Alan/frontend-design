@@ -14,7 +14,7 @@ Eight anchors. Each is a distinct aesthetic territory locked to specific CSS tok
 Before writing code, run this sequence:
 
 1. **Context** — Identify purpose, audience, domain, content density. State the problem in one sentence.
-2. **Anchor** — Pick one. Lean unexpected. A Swiss punk record label, an Industrial florist, a Brutalist luxury watchmaker, an Aurora tax app, a Chaotic law firm, a Retro-Futuristic wedding photographer, an Organic trading terminal, a Lo-Fi luxury hotel — each more distinctive than its safe counterpart. Safe pairings produce generic work; the tension between anchor and brief is where distinctive work lives. State the choice and the reason in one line.
+2. **Anchor** — Pick one. Lean unexpected. A Swiss punk record label, an Industrial florist, a Brutalist luxury watchmaker, an Aurora tax app, a Chaotic law firm, a Retro-Futuristic wedding photographer, an Organic trading terminal, a Lo-Fi luxury hotel — each more distinctive than its safe counterpart. Safe pairings produce generic work. Unexpectedness lives at the surface — what a first-time viewer sees — not in the audience or the backend. "The users are technical" and "the product is really a data tool" are reframes that route every brief to Industrial; discard them. State the choice and the reason in one line.
 3. **Differentiator** — Define one memorable anchor-internal move: a signature interaction, a typographic gesture, a layout motif, or a material treatment. One sentence. Describable. Visible in the rendered output.
 4. **System** — Match the chosen anchor's tokens exactly. Picking Swiss means white + sans + grid, not "some flavor of clean."
 5. **Implementation** — Outline structure, then build.
@@ -35,7 +35,7 @@ Each anchor locks specific CSS tokens. Picking the anchor commits to those token
 
 ### 2. Industrial
 
-**Surface:** Pitch black `#000000` or warm-black `#0B0C0A`. **Typography:** IBM Plex Mono, JetBrains Mono, or Berkeley Mono *throughout* — mono for display too. **Signal color:** one semantic — green `#00E676`, red `#FF3B30`, amber `#FFB800`, or acid lime `#C6FF4A`. **Structure:** flat; 1 px borders do the work shadows would elsewhere. Tabular numerics locked with `font-variant-numeric: tabular-nums`.
+**Surface:** Pitch black `#000000` or warm-black `#0B0C0A`. **Typography:** IBM Plex Mono, JetBrains Mono, or Berkeley Mono — mono for display and body. **Signal color:** one semantic — green `#00E676`, red `#FF3B30`, amber `#FFB800`, or acid lime `#C6FF4A`. **Structure:** flat; 1 px borders instead of shadows. Tabular numerics via `font-variant-numeric: tabular-nums`.
 
 **Breaks if:** serif typography, proportional fonts, warm paper, any grain, decorative shadows, or rounded corners appear.
 
