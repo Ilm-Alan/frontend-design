@@ -7,6 +7,8 @@ description: Frontend design skill for Claude Code, Codex, and Gemini CLI. Eight
 
 Eight anchors. Each is a distinct aesthetic territory locked to specific CSS tokens. Pick one per brief. Match its tokens.
 
+> **Reach for the unexpected. Fidelity to the anchor. Discipline on the content. Nothing left to default.**
+
 ---
 
 ## 1. How to work
@@ -14,7 +16,7 @@ Eight anchors. Each is a distinct aesthetic territory locked to specific CSS tok
 Before writing code, run this sequence:
 
 1. **Context** — Identify purpose, audience, domain, content density. State the problem in one sentence.
-2. **Anchor** — Pick one. Lean unexpected. A Swiss punk record label, an Industrial florist, a Brutalist luxury watchmaker, an Aurora tax app, a Chaotic law firm, a Retro-Futuristic wedding photographer, an Organic trading terminal, a Lo-Fi luxury hotel — each more distinctive than its safe counterpart. Safe pairings produce generic work. Unexpectedness lives at the surface — what a first-time viewer sees — not in the audience or the backend. "The users are technical" and "the product is really a data tool" are reframes that route every brief to Industrial; discard them. State the choice and the reason in one line.
+2. **Anchor** — Pick one. Lean unexpected. A Swiss punk record label, an Industrial florist, a Brutalist luxury watchmaker, an Aurora tax app, a Chaotic law firm, a Retro-Futuristic wedding photographer, an Organic trading terminal, a Lo-Fi luxury hotel — each more distinctive than its safe counterpart. Safe pairings produce generic work. Unexpectedness is surface-level — what a first-time viewer sees. Don't let "users are technical" or "it's really a data tool" route every brief to Industrial. State the choice and the reason in one line.
 3. **Differentiator** — Define one memorable anchor-internal move: a signature interaction, a typographic gesture, a layout motif, or a material treatment. One sentence. Describable. Visible in the rendered output.
 4. **System** — Match the chosen anchor's tokens exactly. Picking Swiss means white + sans + grid, not "some flavor of clean."
 5. **Implementation** — Outline structure, then build. Content on screen is authored to the discipline in §2 — no fabrication, no filler, no themed replacement for standard UI copy.
@@ -25,21 +27,17 @@ Commit fully to one anchor. Hybridising ("Swiss with Brutalist edge") is a categ
 
 ## 2. Content is not design
 
-Design is visuals — palette, typography, structure, texture. **Content — every string, number, and label on screen — is authored separately and has its own discipline.** You can hit every anchor token perfectly and still ship slop if the screen is full of fake telemetry, invented session personas, themed replacements for standard UI copy, or unicode glyphs posing as icons. Token fidelity is not a defence against content slop.
+Design is visuals — palette, typography, structure, texture. **Content — every string, number, and label on screen — is authored separately and has its own discipline.** Token fidelity is not a defence against content slop.
 
-The rule: every string on screen must either name real information from the product, or be authored content that knows what it is — headline, button label, legal body, form field name, generic sample data that reads as sample. What's forbidden is content pretending to be something it isn't.
+The rule: every string on screen must either name real information from the product, or be authored content that knows what it is — headline, button label, legal body, form field name, sample data that reads as sample. What's forbidden is content pretending to be something it isn't.
 
 **Forbidden:**
 
-- **Fabrication posing as real data.** Invented session personas (`a.chen@grid.co`), fake telemetry (`SYS.STAT ONLINE`, `BUILD 8.2.0-rc3`, `GRID.FREQ 59.998 Hz`), imaginary identifiers (`MON-COAL-3`, `VCS-9342`), made-up metrics (`EVENTS / HR 48,102`). If a slot has no real content to fill it, leave the slot empty — do not fabricate to make the screen look alive.
-- **Filler labels.** Mono-caps subtitles nobody asked for (`SECURE OPERATOR AUTHENTICATION` under a login masthead), `//`-prefixed kickers pretending to be code comments (`// INTELLIGENCE LAYER`), ornamental section labels that name nothing. If removing the string removes no information, it was filler.
-- **Themed replacement of standard UI copy.** `Authenticate Session` instead of `Next`. `Remember this operator` instead of `Remember me`. `↳ End Session` instead of `Sign out`. Standard copy for standard actions. Themed copy is a tax that must be paid with actual utility; if it doesn't earn its place, standard wins.
-- **Unicode glyphs as icon substitutes.** `▣ Dashboard`, `◊ Market Navigator`, `↗ Portal`, `↳ Sign Out`. Either use a real icon set or use nothing. ASCII art is not iconography.
-- **AI-slop register.** The model recognises what AI slop looks like: twee poetic subcopy on serious surfaces (`Ask the grid.`, `Start somewhere.`), synth-sci-fi status strips on mundane B2B products, ornamental "seam" / "joinery" flourishes pretending to be structural, over-segmented taxonomies of mono-caps section labels, synthwave-register applied to contexts that don't call for it. Recognise it in your own output and cut it before shipping — do not make the reviewer do it.
-
-The test: would the actual operator or reader of this product want this string on screen? If no, cut it.
-
-This discipline is orthogonal to anchor choice. An Industrial terminal with fabricated grid frequency values is slop. A Swiss composition with invented utility account IDs is slop. An Organic welcome page with a `//` code-comment kicker is slop. The anchor held; the content failed.
+- **Fabrication posing as real data.** Invented session personas (`a.chen@grid.co`), fake telemetry (`GRID.FREQ 59.998 Hz`, `BUILD 8.2.0-rc3`). If a slot has no real content, leave it empty — do not fabricate to make the screen look alive.
+- **Filler labels.** Mono-caps subtitles nobody asked for (`SECURE OPERATOR AUTHENTICATION` under a login masthead), `//`-prefixed kickers pretending to be code comments (`// INTELLIGENCE LAYER`). If removing the string removes no information, it was filler.
+- **Themed replacement of standard UI copy.** `Authenticate Session` instead of `Next`; `Remember this operator` instead of `Remember me`. Standard copy for standard actions. Themed copy is a tax that must be paid with actual utility.
+- **Unicode glyphs as icon substitutes.** `▣ Dashboard`, `◊ Market Navigator`. Either use a real icon set or use nothing. ASCII art is not iconography.
+- **AI-slop register.** The model recognises this. Twee subcopy on serious surfaces (`Ask the grid.`), synth-sci-fi status strips on mundane B2B, ornamental "seam"/"joinery" flourishes pretending to be structural. Recognise it in your own output; cut it before the reviewer does.
 
 ---
 
@@ -112,9 +110,6 @@ Every implementation delivers:
 
 - **Unexpected pairing** — Did the choice reach for creative tension, or default to the safe pairing?
 - **Token fidelity** — Does every rendered token live inside the anchor's allowed range? If tokens appear that the anchor doesn't allow, the anchor didn't hold.
-- **Content fidelity** — Does every label name real information? Is standard UI copy used for standard actions? Any fabricated data pretending to be real production content?
-- **Slop check** — Any filler mono-caps labels, `//`-prefixed kickers, unicode-glyph icon substitutes, twee subcopy, fake telemetry, or AI-register flavor? If yes, cut before shipping — do not make the reviewer do it.
+- **Content discipline** — Every label names real information; standard UI copy for standard actions; no fabrication, filler mono-caps, `//` kickers, unicode-glyph icons, twee subcopy, or AI-slop register. If any appeared, cut.
 - **Differentiator visible** — Is the memorable anchor-internal move actually rendered?
 - **Hybrid resistance** — Was one anchor held, or did the execution drift into "Swiss with Brutalist edge"?
-
-Reach for the unexpected. Fidelity to the anchor. Discipline on the content. Nothing left to default.
