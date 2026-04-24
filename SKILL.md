@@ -94,4 +94,4 @@ Every implementation delivers:
 - **Differentiator visible** — Is the memorable anchor-internal move actually rendered?
 - **Hybrid resistance** — Was one anchor held, or did the execution drift into "Swiss with Brutalist edge"?
 
-Intention in every choice. Fidelity to the anchor. Nothing left to default.
+Reach for the unexpected. Fidelity to the anchor. Nothing left to default.
