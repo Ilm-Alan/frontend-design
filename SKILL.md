@@ -17,13 +17,33 @@ Before writing code, run this sequence:
 2. **Anchor** — Pick one. Lean unexpected. A Swiss punk record label, an Industrial florist, a Brutalist luxury watchmaker, an Aurora tax app, a Chaotic law firm, a Retro-Futuristic wedding photographer, an Organic trading terminal, a Lo-Fi luxury hotel — each more distinctive than its safe counterpart. Safe pairings produce generic work. Unexpectedness lives at the surface — what a first-time viewer sees — not in the audience or the backend. "The users are technical" and "the product is really a data tool" are reframes that route every brief to Industrial; discard them. State the choice and the reason in one line.
 3. **Differentiator** — Define one memorable anchor-internal move: a signature interaction, a typographic gesture, a layout motif, or a material treatment. One sentence. Describable. Visible in the rendered output.
 4. **System** — Match the chosen anchor's tokens exactly. Picking Swiss means white + sans + grid, not "some flavor of clean."
-5. **Implementation** — Outline structure, then build.
+5. **Implementation** — Outline structure, then build. Content on screen is authored to the discipline in §2 — no fabrication, no filler, no themed replacement for standard UI copy.
 
 Commit fully to one anchor. Hybridising ("Swiss with Brutalist edge") is a category error — each signature excludes the others by construction.
 
 ---
 
-## 2. The eight anchors
+## 2. Content is not design
+
+Design is visuals — palette, typography, structure, texture. **Content — every string, number, and label on screen — is authored separately and has its own discipline.** You can hit every anchor token perfectly and still ship slop if the screen is full of fake telemetry, invented session personas, themed replacements for standard UI copy, or unicode glyphs posing as icons. Token fidelity is not a defence against content slop.
+
+The rule: every string on screen must either name real information from the product, or be authored content that knows what it is — headline, button label, legal body, form field name, generic sample data that reads as sample. What's forbidden is content pretending to be something it isn't.
+
+**Forbidden:**
+
+- **Fabrication posing as real data.** Invented session personas (`a.chen@grid.co`), fake telemetry (`SYS.STAT ONLINE`, `BUILD 8.2.0-rc3`, `GRID.FREQ 59.998 Hz`), imaginary identifiers (`MON-COAL-3`, `VCS-9342`), made-up metrics (`EVENTS / HR 48,102`). If a slot has no real content to fill it, leave the slot empty — do not fabricate to make the screen look alive.
+- **Filler labels.** Mono-caps subtitles nobody asked for (`SECURE OPERATOR AUTHENTICATION` under a login masthead), `//`-prefixed kickers pretending to be code comments (`// INTELLIGENCE LAYER`), ornamental section labels that name nothing. If removing the string removes no information, it was filler.
+- **Themed replacement of standard UI copy.** `Authenticate Session` instead of `Next`. `Remember this operator` instead of `Remember me`. `↳ End Session` instead of `Sign out`. Standard copy for standard actions. Themed copy is a tax that must be paid with actual utility; if it doesn't earn its place, standard wins.
+- **Unicode glyphs as icon substitutes.** `▣ Dashboard`, `◊ Market Navigator`, `↗ Portal`, `↳ Sign Out`. Either use a real icon set or use nothing. ASCII art is not iconography.
+- **AI-slop register.** The model recognises what AI slop looks like: twee poetic subcopy on serious surfaces (`Ask the grid.`, `Start somewhere.`), synth-sci-fi status strips on mundane B2B products, ornamental "seam" / "joinery" flourishes pretending to be structural, over-segmented taxonomies of mono-caps section labels, synthwave-register applied to contexts that don't call for it. Recognise it in your own output and cut it before shipping — do not make the reviewer do it.
+
+The test: would the actual operator or reader of this product want this string on screen? If no, cut it.
+
+This discipline is orthogonal to anchor choice. An Industrial terminal with fabricated grid frequency values is slop. A Swiss composition with invented utility account IDs is slop. An Organic welcome page with a `//` code-comment kicker is slop. The anchor held; the content failed.
+
+---
+
+## 3. The eight anchors
 
 Each anchor locks specific CSS tokens. Picking the anchor commits to those tokens. If the rendered output drifts outside them, the anchor didn't hold.
 
@@ -77,21 +97,24 @@ Each anchor locks specific CSS tokens. Picking the anchor commits to those token
 
 ---
 
-## 3. Output
+## 4. Output
 
 Every implementation delivers:
 
 - **Stated direction** — A short preamble in a designer's prose before the code, naming: the chosen anchor, why this pairing over the safe one, the differentiator, and the key palette / typefaces / texture choices pulled from the anchor. Written with conviction, not as a checklist.
 - **Token fidelity** — The rendered CSS matches the anchor's tokens exactly. If Swiss is chosen, the CSS contains no warm paper, no Fraunces, no grain. If Industrial is chosen, every typeface declared is monospace. Token drift means the anchor didn't hold.
+- **Content discipline** — Every string, number, and label on screen names real information or is authored content that knows what it is. No fabricated data, no filler labels, no themed replacement for standard UI copy, no unicode-glyph icons. Token fidelity alone is not sufficient; content ships too.
 - **Differentiator visible** — The one memorable move is implemented in the rendered output, not merely described.
 
 ---
 
-## 4. Before shipping
+## 5. Before shipping
 
 - **Unexpected pairing** — Did the choice reach for creative tension, or default to the safe pairing?
 - **Token fidelity** — Does every rendered token live inside the anchor's allowed range? If tokens appear that the anchor doesn't allow, the anchor didn't hold.
+- **Content fidelity** — Does every label name real information? Is standard UI copy used for standard actions? Any fabricated data pretending to be real production content?
+- **Slop check** — Any filler mono-caps labels, `//`-prefixed kickers, unicode-glyph icon substitutes, twee subcopy, fake telemetry, or AI-register flavor? If yes, cut before shipping — do not make the reviewer do it.
 - **Differentiator visible** — Is the memorable anchor-internal move actually rendered?
 - **Hybrid resistance** — Was one anchor held, or did the execution drift into "Swiss with Brutalist edge"?
 
-Reach for the unexpected. Fidelity to the anchor. Nothing left to default.
+Reach for the unexpected. Fidelity to the anchor. Discipline on the content. Nothing left to default.
