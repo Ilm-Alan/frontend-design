@@ -1,6 +1,6 @@
 ---
 name: frontend-design
-description: Frontend design skill for Claude Code, Codex, and Gemini CLI. Eight aesthetic anchors, each locking palette, typography, and texture to specific CSS tokens. Pick one per brief.
+description: Make frontend visual design choices — palette, typography, structure, texture, and on-screen content — with deliberate intent rather than defaulting to generic styles. Use whenever building or restyling a UI surface.
 ---
 
 # Frontend Design Skill
