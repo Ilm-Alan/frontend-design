@@ -1,6 +1,6 @@
 ---
 name: frontend-design
-description: Make frontend visual design choices — palette, typography, structure, texture, and on-screen content — with deliberate intent rather than defaulting to generic styles. Use whenever building or restyling a UI surface.
+description: Build a UI surface with a deliberate visual direction held through palette, typography, structure, and texture, with on-screen strings that name real information rather than fabricated demo data or filler labels. Use when building or restyling any UI surface.
 ---
 
 # Frontend Design Skill
