@@ -1,6 +1,6 @@
 ---
 name: frontend-design
-description: Build a UI surface with a deliberate visual direction held through palette, typography, structure, and texture, with on-screen strings that name real information rather than fabricated demo data or filler labels. Use when building or restyling any UI surface.
+description: Build a frontend with a deliberate visual direction held through palette, typography, structure, and texture, with on-screen strings that name real information rather than fabricated demo data or filler labels. Use when building or restyling a frontend.
 ---
 
 # Frontend Design Skill
